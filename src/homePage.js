@@ -1,7 +1,6 @@
 import plateImg from './images/1.png';
 import plateDrawingImg from './images/2.png';
 
-
 function loadPage(){
 
     console.log("HOME PAGE CHECK!");
@@ -60,8 +59,11 @@ function loadPage(){
 
     //append left and right content to main content div
     const divContent = document.querySelector('#content');
-    divContent.appendChild(leftContent);
-    divContent.appendChild(rightContent);
+    const homeDiv = document.createElement('div');
+    homeDiv.id = "homeDiv";
+    homeDiv.appendChild(leftContent);
+    homeDiv.appendChild(rightContent);
+    divContent.appendChild(homeDiv)
 }
 
 export default loadPage;

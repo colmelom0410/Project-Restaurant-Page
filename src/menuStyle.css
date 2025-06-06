@@ -1,0 +1,65 @@
+
+#menuCard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: #3f4238;
+    position: relative;
+    height: 1000px;
+    width: 700px;
+    overflow: hidden;
+    gap: 1px;
+}
+#menuTitle{
+    background-color: purple;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+#divFoods{
+    background-color: red;
+    grid-area: 2 / 1 / 4 / 3;
+}
+
+#divBreakfast{
+    display: flex;
+    gap: 150px;
+
+}
+#bfFood{
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#menuTitle h1{
+    font-family: 'Perandory Semi-Condensed';
+    font-size: 4em;
+    color: #cae6d5;
+}
+#menuTitle h3{
+    color: #cae6d5;
+    font-family: 'PP Gatwick Ultralight'
+}
+
+
+
+
+/* Images */
+#menuCard img{
+    position: absolute;
+}
+
+#foodItem1{
+    top: -170px;
+    right: -175px;
+}
+#foodItem2, #foodItem3{
+    width: 300px;
+    height: auto;
+}
+#foodItem2{
+    top: 400px;
+    right: -150px;
+}
+#foodItem3{
+    bottom: -70px;
+    right: -120px;
+}
