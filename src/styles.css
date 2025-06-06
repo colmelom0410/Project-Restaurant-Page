@@ -1,0 +1,190 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* ------------------------------------- */
+
+  @font-face {
+    font-family: 'Perandory Semi-Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Perandory Semi-Condensed'), url('PerandorySemiCondensed.woff') format('woff');
+    }
+
+  @font-face {
+    font-family: 'PP Gatwick Ultralight';
+    font-style: normal;
+    font-weight: normal;
+    src: local('PP Gatwick Ultralight'), url('PPGatwick-Ultralight.woff') format('woff');
+    }
+    
+  @font-face {
+    font-family: 'PP Gatwick Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('PP Gatwick Bold'), url('PPGatwick-Bold.woff') format('woff');
+    }
+
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5fffa;
+  }
+
+  *{
+    color: #0f271f;
+    font-family: 'PP Gatwick Ultralight';
+  }
+
+  p{
+    font-weight: bold;
+  }
+
+  header{
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 80px;
+    margin-bottom: 20px;
+  }
+  nav{
+    border: 1px solid purple;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+  }
+  nav button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    width: 2em;
+    font-family: 'PP Gatwick Bold';;
+  }
+  nav button:hover{
+    color: rgb(80, 79, 79);
+  }
+  nav button:active{
+    color: #0f271f;
+  }
+  div{
+    border: 1px solid green;
+  }
+
+  #icon, #leftContent h1{
+    font-family: 'Perandory Semi-Condensed';
+  }
+
+  /* HOMEPAGE */
+  #leftContent h1{
+    font-size: 6rem;
+    line-height: 1em;
+    margin-bottom: 40px;
+  }
+
+  #leftContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-left: 80px;
+  }
+
+  #leftContent p{
+    font-size: 1.5em;
+  }
+  #content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    justify-content: space-between;
+    gap: 100px;
+  }
+
+  #rightContent{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-right: 80px;
+  }
+
+  
+
+  #rightFirst{
+    grid-area: 1 / 1 / 4 / 2;
+    background-color: #cae6d5; 
+    position: relative;
+  }
+
+  #rightFirst img{
+    position: absolute;
+    left: -50px;
+    bottom: 0px;
+  }
+
+  #rightFirst h2, #rightFirst p{
+    text-align: center;
+  }
+  #rightSecond{
+    grid-area: 1 / 2 / 3 / 3;
+    background-color: #f0e9e1;
+  }
+
+  #rightFirst,#rightSecond{
+    padding: 20px 20px 0px 20px;
+  }
+
+  #rightThird, #rightFirst h2{
+    font-family: 'Perandory Semi-Condensed';
+    font-size: 3em;
+    line-height: 1em;
+  }
+  
+  #rightThird{
+    padding: 15px 50% 15px 15px;
+    font-size: 4em;
+  }
+
+  /* MENU */
+
+  /* ABOUT */

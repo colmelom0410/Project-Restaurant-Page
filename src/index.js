@@ -1,6 +1,7 @@
 import homePage from './homePage.js';
 import menuPage from './menuPage.js';
 import aboutPage from './aboutPage.js';
+import "./styles.css";
 
 
 homePage();
