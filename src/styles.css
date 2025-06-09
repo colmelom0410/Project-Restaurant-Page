@@ -66,7 +66,6 @@
   body{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: #f5fffa;
   }
@@ -75,21 +74,27 @@
     color: #0f271f;
     font-family: 'PP Gatwick Ultralight';
   }
+  h1{
+    font-family: 'Perandory Semi-Condensed';
+    font-size: 4em;
+  }
 
   p{
     font-weight: bold;
   }
 
   header{
-    border: 1px solid red;
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 40px 80px;
     margin-bottom: 20px;
   }
+
+  header h1{
+    font-size: 2em;
+  }
   nav{
-    border: 1px solid purple;
     width: 50%;
     display: flex;
     justify-content: space-around;
@@ -106,9 +111,6 @@
   }
   nav button:active{
     color: #0f271f;
-  }
-  div{
-    border: 1px solid green;
   }
 
   #icon, #leftContent h1{
@@ -185,8 +187,14 @@
     font-size: 4em;
   }
 
-  /* MENU */
+  /* Footer */
 
-
-
-  /* ABOUT */
+  footer{
+    font-weight: bold;
+    font-size: 0.8em;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #0f271f;
+  }
