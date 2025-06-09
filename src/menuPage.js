@@ -4,6 +4,50 @@ import food3 from './images/food3.png';
 import './menuStyle.css';
 
 
+
+class menuTemplate{
+    constructor(type){
+        this.type = type;
+    }
+    createTemplate(){
+        const mealDiv = document.createElement('div');
+        mealDiv.classList.add('template');
+        const typeH2 = document.createElement('h2');
+        typeH2.textContent = this.type;
+        mealDiv.appendChild(typeH2);
+
+        return mealDiv;
+    }
+    
+}
+
+class Meal{
+    constructor(type, food, price){
+        this.type = type;
+        this.food = food;
+        this.price = price;
+    }
+    createP(){
+        const foodPriceDiv = document.createElement('div');
+        const foodP = document.createElement('p');
+        foodP.textContent = this.food;
+        const priceP = document.createElement('p');
+        priceP.textContent = this.price;
+        foodPriceDiv.appendChild(foodP);
+        foodPriceDiv.appendChild(priceP);
+
+        return foodPriceDiv;
+    }
+    appendFood(){
+        const template = this.type;
+        const foodBlock = this.createP();
+        template.appendChild(foodBlock);
+        return template;
+        
+    }
+}
+
+
 function loadPage(){
 
     console.log("MENU PAGE CHECK!");
@@ -25,44 +69,50 @@ function loadPage(){
 
     // foods
     const divFoods = document.createElement('div');
-    divFoods.id = "divFoods";
-    const divBreakfast = document.createElement('div');
-    divBreakfast.id = "divBreakfast";
-    const breakfastH2 = document.createElement('h2');
-    breakfastH2.textContent = "BREAKFAST";
-    const breakFastFoods = document.createElement('div');
-    const bf1 = document.createElement('p');
-    const bf2 = document.createElement('p');
-    const bf3 = document.createElement('p');
-    const bf4 = document.createElement('p');
-    bf1.textContent = "Tapsilog";
-    bf2.textContent = "Tocilog";
-    bf3.textContent = "Longsilog";
-    bf4.textContent = "Hotsilog";
-    breakFastFoods.appendChild(bf1);
-    breakFastFoods.appendChild(bf2);
-    breakFastFoods.appendChild(bf3);
-    breakFastFoods.appendChild(bf4);
-    const breakFastPrice = document.createElement('div');
-    const bf1Price = document.createElement('p');
-    const bf2Price = document.createElement('p');
-    const bf3Price = document.createElement('p');
-    const bf4Price = document.createElement('p');
-    bf1Price.textContent = "Php 123";
-    bf2Price.textContent = "Php 123";
-    bf3Price.textContent = "Php 123";
-    bf4Price.textContent = "Php 123";
-    breakFastPrice.appendChild(bf1Price);
-    breakFastPrice.appendChild(bf2Price);
-    breakFastPrice.appendChild(bf3Price);
-    breakFastPrice.appendChild(bf4Price);
+    divFoods.id = "divFoods";   
 
+    //Breakfast Menu
+    const menuTemplate1 = new menuTemplate("BREAKFAST");
+    const menuBlock1 = menuTemplate1.createTemplate();
+    const bfMeal1 = new Meal(menuBlock1,"Tapsilog", "Php 130");
+    const bfMeal2 = new Meal(menuBlock1,"Tocilog", "Php 125");
+    const bfMeal3 = new Meal(menuBlock1,"Longsilog", "Php 125");
+    const bfMeal4 = new Meal(menuBlock1,"Hotsilog", "Php 120");
+    divFoods.appendChild(menuBlock1);
+    divFoods.appendChild(bfMeal1.appendFood());
+    divFoods.appendChild(bfMeal2.appendFood());
+    divFoods.appendChild(bfMeal3.appendFood());
+    divFoods.appendChild(bfMeal4.appendFood());
     
-    divBreakfast.appendChild(breakFastFoods);
-    divBreakfast.appendChild(breakFastPrice);
-    divFoods.appendChild(breakfastH2);
-    divFoods.appendChild(divBreakfast);
+    //Snacks
+    const menuTemplate2 = new menuTemplate("SNACKS (Good For 2)");
+    const menuBlock2 = menuTemplate2.createTemplate();
+    const snacks1 = new Meal(menuBlock2,"Pancit Palabok", "Php 129");
+    const snacks2 = new Meal(menuBlock2,"Spaghetti Platter", "Php 119");
+    const snacks3 = new Meal(menuBlock2,"Cheesy Macaroni", "Php 129");
+    const snacks4 = new Meal(menuBlock2,"Pancit Lomi", "Php 109");
+    divFoods.appendChild(menuBlock2);
+    divFoods.appendChild(snacks1.appendFood());
+    divFoods.appendChild(snacks2.appendFood());
+    divFoods.appendChild(snacks3.appendFood());
+    divFoods.appendChild(snacks4.appendFood());
 
+    //Meat Dishes
+    const menuTemplate3 = new menuTemplate("MEAT DISHES");
+    const menuBlock3 = menuTemplate3.createTemplate();
+    const meat1 = new Meal(menuBlock3,"Beef kare-kare", "Php 259");
+    const meat2 = new Meal(menuBlock3,"Chicken Spicy Inasal", "Php 149");
+    const meat3 = new Meal(menuBlock3,"Pork Crispy Lumpia", "Php 119");
+    const meat4 = new Meal(menuBlock3,"Pork Liempo", "Php 189");
+    divFoods.appendChild(menuBlock3);
+    divFoods.appendChild(meat1.appendFood());
+    divFoods.appendChild(meat2.appendFood());
+    divFoods.appendChild(meat3.appendFood());
+    divFoods.appendChild(meat4.appendFood());
+
+    const menuFooter = document.createElement('h2');
+    menuFooter.id = "menuFooter";
+    menuFooter.textContent = "Tasty Filipino Food for Everyone!";
     // Images
     const foodItem1 = document.createElement('img');
     foodItem1.src = food1;
@@ -81,6 +131,7 @@ function loadPage(){
     menuCard.appendChild(foodItem1);
     menuCard.appendChild(foodItem2);
     menuCard.appendChild(foodItem3);
+    menuCard.appendChild(menuFooter);
 
     const divContent = document.querySelector('#content');
     menu.appendChild(header);
