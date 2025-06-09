@@ -20,7 +20,7 @@
     width: 700px;
     overflow: hidden;
     padding: 40px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 #menuTitle{
     grid-area: 1 / 1 / 2 / 3;

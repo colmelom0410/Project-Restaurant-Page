@@ -5,7 +5,7 @@ import './menuStyle.css';
 
 
 
-class menuTemplate{
+class MenuTemplate{
     constructor(type){
         this.type = type;
     }
@@ -22,8 +22,7 @@ class menuTemplate{
 }
 
 class Meal{
-    constructor(type, food, price){
-        this.type = type;
+    constructor(food, price){
         this.food = food;
         this.price = price;
     }
@@ -37,13 +36,6 @@ class Meal{
         foodPriceDiv.appendChild(priceP);
 
         return foodPriceDiv;
-    }
-    appendFood(){
-        const template = this.type;
-        const foodBlock = this.createP();
-        template.appendChild(foodBlock);
-        return template;
-        
     }
 }
 
@@ -72,43 +64,43 @@ function loadPage(){
     divFoods.id = "divFoods";   
 
     //Breakfast Menu
-    const menuTemplate1 = new menuTemplate("BREAKFAST");
-    const menuBlock1 = menuTemplate1.createTemplate();
-    const bfMeal1 = new Meal(menuBlock1,"Tapsilog", "Php 130");
-    const bfMeal2 = new Meal(menuBlock1,"Tocilog", "Php 125");
-    const bfMeal3 = new Meal(menuBlock1,"Longsilog", "Php 125");
-    const bfMeal4 = new Meal(menuBlock1,"Hotsilog", "Php 120");
+    const MenuTemplate1 = new MenuTemplate("BREAKFAST");
+    const menuBlock1 = MenuTemplate1.createTemplate();
+    const bfMeal1 = new Meal("Tapsilog", "Php 130");
+    const bfMeal2 = new Meal("Tocilog", "Php 125");
+    const bfMeal3 = new Meal("Longsilog", "Php 125");
+    const bfMeal4 = new Meal("Hotsilog", "Php 120");
     divFoods.appendChild(menuBlock1);
-    divFoods.appendChild(bfMeal1.appendFood());
-    divFoods.appendChild(bfMeal2.appendFood());
-    divFoods.appendChild(bfMeal3.appendFood());
-    divFoods.appendChild(bfMeal4.appendFood());
+    menuBlock1.appendChild(bfMeal1.createP());
+    menuBlock1.appendChild(bfMeal2.createP());
+    menuBlock1.appendChild(bfMeal3.createP());
+    menuBlock1.appendChild(bfMeal4.createP());
     
     //Snacks
-    const menuTemplate2 = new menuTemplate("SNACKS (Good For 2)");
-    const menuBlock2 = menuTemplate2.createTemplate();
-    const snacks1 = new Meal(menuBlock2,"Pancit Palabok", "Php 129");
-    const snacks2 = new Meal(menuBlock2,"Spaghetti Platter", "Php 119");
-    const snacks3 = new Meal(menuBlock2,"Cheesy Macaroni", "Php 129");
-    const snacks4 = new Meal(menuBlock2,"Pancit Lomi", "Php 109");
+    const MenuTemplate2 = new MenuTemplate("SNACKS (Good For 2)");
+    const menuBlock2 = MenuTemplate2.createTemplate();
+    const snacks1 = new Meal("Pancit Palabok", "Php 129");
+    const snacks2 = new Meal("Spaghetti Platter", "Php 119");
+    const snacks3 = new Meal("Cheesy Macaroni", "Php 129");
+    const snacks4 = new Meal("Pancit Lomi", "Php 109");
     divFoods.appendChild(menuBlock2);
-    divFoods.appendChild(snacks1.appendFood());
-    divFoods.appendChild(snacks2.appendFood());
-    divFoods.appendChild(snacks3.appendFood());
-    divFoods.appendChild(snacks4.appendFood());
+    menuBlock2.appendChild(snacks1.createP());
+    menuBlock2.appendChild(snacks2.createP());
+    menuBlock2.appendChild(snacks3.createP());
+    menuBlock2.appendChild(snacks4.createP());
 
     //Meat Dishes
-    const menuTemplate3 = new menuTemplate("MEAT DISHES");
-    const menuBlock3 = menuTemplate3.createTemplate();
-    const meat1 = new Meal(menuBlock3,"Beef kare-kare", "Php 259");
-    const meat2 = new Meal(menuBlock3,"Chicken Spicy Inasal", "Php 149");
-    const meat3 = new Meal(menuBlock3,"Pork Crispy Lumpia", "Php 119");
-    const meat4 = new Meal(menuBlock3,"Pork Liempo", "Php 189");
+    const MenuTemplate3 = new MenuTemplate("MEAT DISHES");
+    const menuBlock3 = MenuTemplate3.createTemplate();
+    const meat1 = new Meal("Beef kare-kare", "Php 259");
+    const meat2 = new Meal("Chicken Spicy Inasal", "Php 149");
+    const meat3 = new Meal("Pork Crispy Lumpia", "Php 119");
+    const meat4 = new Meal("Pork Liempo", "Php 189");
     divFoods.appendChild(menuBlock3);
-    divFoods.appendChild(meat1.appendFood());
-    divFoods.appendChild(meat2.appendFood());
-    divFoods.appendChild(meat3.appendFood());
-    divFoods.appendChild(meat4.appendFood());
+    menuBlock3.appendChild(meat1.createP());
+    menuBlock3.appendChild(meat2.createP());  
+    menuBlock3.appendChild(meat3.createP());
+    menuBlock3.appendChild(meat4.createP());
 
     const menuFooter = document.createElement('h2');
     menuFooter.id = "menuFooter";
